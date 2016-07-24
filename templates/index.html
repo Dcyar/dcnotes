@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} DC/Notes {% endblock  %}
+
+{% block content %}
+    <div id="new_note_create" class="row">
+        <div class="col l6 m8 s12 offset-l3 offset-m2">
+            <a href="{% url "new_note" %}" class="col s12 waves-effect waves-light btn orange darken-4"><span class="icon-pen"></span>Crear Nota</a>
+        </div>
+    </div>
+    <section id="login-section" class="row">
+        <div class="col l6 s12 offset-l3">
+            <p class="center-align font-big no-margin">Iniciar sesión</p>
+            <form class="col l10 offset-l1 s12 valign-wrapper">
+                <div class="input-field col m5 s12">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Username</label>
+                 </div>
+                <div class="input-field col m5 s12">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Password</label>
+                </div>
+                <div class="col m2 s12 valign">
+                    <li><a href="#" class="waves-effect waves-light btn orange darken-2">Entrar</a></li>
+                </div>
+            </form>
+            <p class="col s12 center-align no-margin">No tienes una cuenta? <a href="#">Registrate aquí</a></p>
+        </div>
+    </section>
+    <div id="tags" class="row">
+        <div class="col l8 m10 s12 offset-l2 offset-m1">
+            <p>Tags:</p>
+            {% for course in courses  %}
+            <div class="chip">
+                <a href="#">{{ course.name }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <section id="notes-section" class="row">
+        {% for note in notes  %}
+            <div class="col l6 m10 offset-m1 s12 margin-b">
+                <div class="col s10 offset-s1 center-align teal lighten-1 course">
+                    {{ note.course }}
+                </div>
+                <div class="col s12 grey lighten-2 content-note">
+                    <h2>{{ note.title }}</h2>
+                    <p><span class="icon-alarm">{{ note.dateInitial }}</span><span class="icon-alarm"> {{ note.dateEnd }}</span></p>
+                    <p>{{ note.description }}</p>
+                </div>
+                <div class="col s10 offset-s1 teal center-align lighten-1 val-sta">
+                    <div class="col s6 left-align">
+                        <span class="icon-star-full">{{ note.priority }}</span>
+                    </div>
+                    <div class="col s6 right-align state-heart">
+                        {% if note.state == False %}
+                            <label><a href="{% url "cambiarEstado" note.pk %}"><span class="icon-heart-broken"></span></a></label>
+                        {% else %}
+                            <label class="icon-heart"></label>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock  %}

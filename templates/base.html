@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}  {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"  />
+</head>
+<body>
+    <section id="cabecera" class="row">
+        <div class="col s12">
+            <h1 class="no-margin">DC/Notes v1.0</h1>
+            <p class="no-margin">Guarda tus notas de forma sencilla</p>
+        </div>
+    </section>
+    <nav class="teal darken-3 padding-l">
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Inicio</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url "new_note" %}" class="waves-effect waves-light btn orange darken-4"><span class="icon-pen"></span>Crear Nota</a></li>
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+
+    <footer>
+        <p>© Copyright 2016 - <a href="https://dyamcode.blogspot.pe/" target="_blank">DyamCode</a> - Design by <a href="http://dyamcode.github.io/" target="_blank">Dcyar</a></p>
+    </footer>
+
+    <script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+    <script>
+        $(".button-collapse").sideNav();
+    </script>
+</body>
+</html>

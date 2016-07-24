@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'quicksand';
+    src: url('../fonts/quicksand-Light.otf'), url('../fonts/quicksand-Regular.otf'), url('../fonts/quicksand-Bold.otf');
+}
+@font-face {
+    font-family: 'icons';
+    src:
+        url('../fonts/icons/icons.ttf?fhtkpp') format('truetype'), url('../fonts/icons/icons.woff?fhtkpp') format('woff'), url('../fonts/icons/icons.svg?fhtkpp#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    background-color: #f5f5f5;
+    font-family: 'quicksand';
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+#cabecera{
+    background-color: #212121;
+    color: #eee;
+    padding: 2em;
+    text-align: center;
+    margin-bottom: 0;
+}
+#cabecera h1{
+    font-size: 3.5em;
+    font-weight: bold;
+}
+nav{
+    font-weight: bold;
+    margin-bottom: 3em;
+}
+nav .btn{
+    font-weight: bold;
+    padding: 0 1em 0 3em;
+}
+nav .icon-pen:before{
+    content: "\e900";
+    margin-right: 5px;
+    margin-left: -40px;
+    font-size: 2em;
+    position: absolute;
+    top:2px;
+}
+.icon-alarm:before {
+    content: "\e901";
+}
+.icon-star-full:after {
+    color: #FFFF00;
+    content: "\e902";
+    margin-left: 4px;
+}
+.icon-heart:before {
+    color: #c93737;
+    font-size: 1.5em;
+    content: "\e903";
+}
+.icon-heart-broken:before {
+    color: #c93737;
+    font-size: 1.5em;
+    content: "\e904";
+}
+#login-section{
+    display: none;
+    font-weight: bold;
+    margin-bottom: 3em;
+}
+#login-section div form div.row{
+    margin-bottom: 0;
+}
+#login-section li{
+    list-style: none;
+}
+#notes-section .course{
+    border-radius: 4px 4px 0 0;
+    padding: .3em 0;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: bold;
+}
+#notes-section .content-note{
+    border: 4px solid #6C6C6C;
+    border-radius: 8px;
+}
+#notes-section .content-note h2{
+    margin:.5em 0 .2em;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#notes-section .content-note p{
+    margin: .5em 0 .6em;
+}
+#notes-section .content-note p span:first-child{
+    color: #757575;
+}
+#notes-section .content-note p span:last-child{
+    margin-left: 20px;
+    color: #ef5350;
+}
+#notes-section .val-sta{
+    border-radius: 0 0 4px 4px;
+    padding: .3em 0;
+    color: #fff;
+    font-weight: bold;
+}
+#notes-section .val-sta a{
+    color: #fff;
+}
+footer{
+    background-color: #2A2A2A;
+    color: #eee;
+    margin-top: 3em;
+    padding: 1em;
+    text-align: center;
+}
+.no-margin{
+    margin: 0;
+}
+.padding-l{
+    padding-left: 2em;
+}
+.font-big{
+    font-size: 1.5em;
+}
+.margin-b{
+    margin-bottom: 2em;
+}
+.chip > a{
+    color: #000;
+    font-weight: bold;
+}
+#tags{
+    display: none;
+}
+#tags p{
+    color: #000;
+    font-weight: bold;
+    margin: 0 1em;
+    display: inline-block;
+}
+#new_note_create{
+    display: none;
+}
+@media screen and (max-width: 992px) {
+    #new_note_create{
+        display: block;
+    }
+}
+@media screen and (max-width: 600px) {
+    .valign-wrapper{
+        display: block;
+    }
+    .valign{
+        margin-bottom: 1em;
+        text-align: center;
+    }
+}
