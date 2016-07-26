@@ -48,13 +48,12 @@
         </div>
     {% endif %}
     <section id="notes-section" class="row">
-        {% for note in notes  %}
-            <div class="col l6 m10 offset-m1 s12 margin-b">
+            <div class="col l6 m10 offset-l3 offset-m1 s12 margin-b">
                 <div class="col s10 offset-s1 center-align teal lighten-1 course">
                     {{ note.course }}
                 </div>
                 <div class="col s12 grey lighten-2 content-note">
-                    <h2><a href="{% url "noteDetail" note.slug %}">{{ note.title }}</a></h2>
+                    <h2>{{ note.title }}</h2>
                     <p><span class="icon-alarm">{{ note.dateInitial }}</span><span class="icon-alarm"> {{ note.dateEnd }}</span></p>
                     <p>{{ note.description }}</p>
                 </div>
@@ -64,13 +63,12 @@
                     </div>
                     <div class="col s6 right-align state-heart">
                         {% if note.state == False %}
-                            <label><a href="{% url "cambiarEstadoIndex" note.pk %}"><span class="icon-heart-broken"></span></a></label>
+                            <label><a href="{% url "cambiarEstadoDetail" note.pk %}"><span class="icon-heart-broken"></span></a></label>
                         {% else %}
                             <label class="icon-heart"></label>
                         {% endif %}
                     </div>
                 </div>
             </div>
-        {% endfor %}
     </section>
 {% endblock  %}

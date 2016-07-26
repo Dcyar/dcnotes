@@ -158,6 +158,22 @@ footer{
 #new_note_create{
     display: none;
 }
+.success{
+    font-weight: bold;
+    background-color: #8ed54c;
+    color: #fff;
+    padding: .6em !important;
+    font-size: 1.2em;
+}
+.close_message{
+    padding: .6em !important;
+    background-color: #df4949;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+}
 @media screen and (max-width: 992px) {
     #new_note_create{
         display: block;
